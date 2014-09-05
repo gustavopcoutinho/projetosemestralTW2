@@ -1,4 +1,10 @@
-GC
+projetosemestralTW2
 ==
 
-Projeto de semestre TW2 Gustavo Coutinho
+Idéia de projeto:
+ Rede social que terá como tema um assunto específico a ser discutido e escolhido.
+
+
+
+
+Felipe Serafim e Gustavo Coutinho
