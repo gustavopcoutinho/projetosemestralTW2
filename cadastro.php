@@ -9,8 +9,8 @@
 
 <?php
 
-$nameErr = $emailErr = $genderErr = $cursoErr = "";
-$name = $email = $gender = $comment = $curso = "";
+$anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
+$anoI = $name = $email = $gender = $comment = $curso = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["name"])) {
@@ -41,7 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if (empty($_POST["curso"])) {
      $cursoErrErr = "Curso necessário";
    }
-   
+   if (empty($_POST["anoInicio"])) {
+     $anoIErr = "Ano de início necessário";
+   } else {
+     $anoI = test_input($_POST["anoInicio"]);
+   }
 
    if (empty($_POST["comment"])) {
      $comment = "";
@@ -67,7 +71,7 @@ function test_input($data) {
 <h2>Validação</h2>
 <p><span class="error">* Campo necessário.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-   Name: <input type="text" name="name" value="<?php echo $name;?>">
+   Nome: <input type="text" name="name" value="<?php echo $name;?>">
    <span class="error">* <?php echo $nameErr;?></span>
    <br><br>
    E-mail: <input type="text" name="email" value="<?php echo $email;?>">
@@ -75,6 +79,9 @@ function test_input($data) {
    <br><br>
    Curso: <input type="text" name="curso" value="<?php echo $curso;?>">
    <span class="error">* <?php echo $cursoErr;?></span>
+   <br><br>
+   Ano de início: <input type="text" name="anoInicio" value="<?php echo $anoI;?>">
+   <span class="error">* <?php echo $anoIErr;?></span>
    <br><br>
    Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
@@ -94,6 +101,8 @@ echo $email;
 echo "<br>";
 echo $curso;
 echo "<br>";
+echo $anoI;
+echo"<br>";
 echo $comment;
 echo "<br>";
 echo $sexo;
