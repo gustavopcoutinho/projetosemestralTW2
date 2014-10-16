@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            
-        </title>
+        <title>OnMack - Início</title>
     </head>
     <body>
-        
-    </body>
-</html>
-
+        <header>
+            
+        </header>
         <?php
 
 /*
@@ -17,3 +14,6 @@
  * and open the template in the editor.
  */
 ?>
+    </body>
+</html>
+
