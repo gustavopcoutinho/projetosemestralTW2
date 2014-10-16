@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $nameErr = "Nome é necessário.";
    } else {
      $name = test_input($_POST["name"]);
-     // check if name only contains letters and whitespace
+     
      if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
        $nameErr = "Somente letras e espaços em branco permitidos."; 
      }
@@ -78,9 +78,9 @@ function test_input($data) {
    <br><br>
    Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
-   Gender:
-   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Feminino") echo "checked";?>  value="female">Female
-   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Masculino") echo "checked";?>  value="male">Male
+   Sexo:
+   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Feminino") echo "checked";?>  value="feminino">Femminino
+   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Masculino") echo "checked";?>  value="masculino">Masculino
    <span class="error">* <?php echo $genderErr;?></span>
    <br><br>
    <input type="submit" name="submit" value="Submit"> 
