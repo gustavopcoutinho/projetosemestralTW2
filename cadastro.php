@@ -10,8 +10,8 @@
 
 <?php
 
-$anoNascErr = $anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
-$anoNasc = $anoI = $name = $email = $gender = $descricao = $curso = "";
+$userErr = $passErr = $anoNascErr = $anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
+$user = $pass = $anoNasc = $anoI = $name = $email = $gender = $descricao = $curso = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["name"])) {
@@ -64,6 +64,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    } else {
      $gender = test_input($_POST["sexo"]);
    }
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   if (empty($_POST["usuário"])) {
+     $userErr = "Usuário é necessário.";
+   } else {
+     $user = test_input($_POST["usuário"]);
+     
+     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+       $userErr = "Usuário invválido"; 
+     }
+   }
+   
+   if (empty($_POST["senha"])) {
+     $passErr = "Senha necessária";
+   } else {
+     $pass = test_input($_POST["senha"]);
+     
+     if (!filter_var($pass)) {
+       $pass = "Senha inválida"; 
+     }
+   }
+   
+}
 }
 
 function test_input($data) {
@@ -95,15 +117,22 @@ function test_input($data) {
    Descrição: <textarea name="descricao" rows="5" cols="40"><?php echo $descricao;?></textarea>
    <br><br>
    Sexo:
-   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Feminino") echo "checked";?>  value="feminino">Femminino
+   <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Feminino") echo "checked";?>  value="feminino">Feminino
    <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Masculino") echo "checked";?>  value="masculino">Masculino
    <span class="error">* <?php echo $genderErr;?></span>
+   <br><br>
+   Usuário: <input type="text" name="user" value="<?php echo $user;?>">
+   <span class="error">* <?php echo $userErr;?></span>
+   <br><br>
+   Senha: <input type="text" name="pass" value="<?php echo $pass;?>">
+   <span class="error">* <?php echo $passErr;?></span>
    <br><br>
    <input type="submit" name="submit" value="Submit"> 
 </form>
 
 <?php
 echo "<h2>Suas informações:</h2>";
+echo "<br>";
 echo $name;
 echo "<br>";
 echo $email;
@@ -117,6 +146,10 @@ echo"<br>";
 echo $descricao;
 echo "<br>";
 echo $gender;
+echo "<br>";
+echo $user;
+echo "<br>";
+echo $pass;
 ?>
 
 </body>
