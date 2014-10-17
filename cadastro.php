@@ -1,6 +1,7 @@
 <!DOCTYPE HTML> 
 <html>
 <head>
+    <meta charset="UTF-8">
 <style>
 .error {color: #FF0000;}
 </style>
@@ -9,8 +10,8 @@
 
 <?php
 
-$anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
-$anoI = $name = $email = $gender = $comment = $curso = "";
+$anoNascErr = $anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
+$anoNasc = $anoI = $name = $email = $gender = $descricao = $curso = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["name"])) {
@@ -32,6 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $emailErr = "Formato de email inválido"; 
      }
    }
+   if (empty($_POST["anoNasc"])) {
+     $anoNascErr = "Ano de nacimento necessário";
+   } else {
+     $anoNasc = test_input($_POST["anoNasc"]);
+   }
      
    if (empty($_POST["curso"])) {
      $curso = "";
@@ -39,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $curso = test_input($_POST["curso"]);
           }
           if (empty($_POST["curso"])) {
-     $cursoErrErr = "Curso necessário";
+     $cursoErr = "Curso necessário";
    }
    if (empty($_POST["anoInicio"])) {
      $anoIErr = "Ano de início necessário";
@@ -47,10 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $anoI = test_input($_POST["anoInicio"]);
    }
 
-   if (empty($_POST["comment"])) {
-     $comment = "";
+   if (empty($_POST["descricao"])) {
+     $descricao = "";
    } else {
-     $comment = test_input($_POST["comment"]);
+     $descricao = test_input($_POST["descricao"]);
    }
 
    if (empty($_POST["sexo"])) {
@@ -77,13 +83,16 @@ function test_input($data) {
    E-mail: <input type="text" name="email" value="<?php echo $email;?>">
    <span class="error">* <?php echo $emailErr;?></span>
    <br><br>
+   Ano de nascimento: <input type="text" name="anoNasc" value="<?php echo $anoNasc;?>">
+   <span class="error">* <?php echo $anoNascErr;?></span>
+   <br><br>
    Curso: <input type="text" name="curso" value="<?php echo $curso;?>">
    <span class="error">* <?php echo $cursoErr;?></span>
    <br><br>
    Ano de início: <input type="text" name="anoInicio" value="<?php echo $anoI;?>">
    <span class="error">* <?php echo $anoIErr;?></span>
    <br><br>
-   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+   Descrição: <textarea name="descricao" rows="5" cols="40"><?php echo $descricao;?></textarea>
    <br><br>
    Sexo:
    <input type="radio" name="sexo" <?php if (isset($gender) && $gender=="Feminino") echo "checked";?>  value="feminino">Femminino
@@ -99,13 +108,15 @@ echo $name;
 echo "<br>";
 echo $email;
 echo "<br>";
+echo $anoNasc;
+echo "<br>";
 echo $curso;
 echo "<br>";
 echo $anoI;
 echo"<br>";
-echo $comment;
+echo $descricao;
 echo "<br>";
-echo $sexo;
+echo $gender;
 ?>
 
 </body>
