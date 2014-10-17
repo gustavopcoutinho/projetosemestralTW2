@@ -1,9 +1,10 @@
-<html>
+<!DOCTYPE HTML>
+    <html>
 	<head>
-		<title> OnMack </title>
+		<title> OnMack - Início </title>
 		<meta charset="utf-8">
 		<link href="css/homepage.css" type="text/css" rel="stylesheet"/>
-		
+        </head>
 		
 	<body>
 		<header>
@@ -69,7 +70,7 @@
                                 <li><a href="cadastro.php" target=""> CADASTRO </a></li>
                                 <li><a href="login.php" target=""> LOGIN </a></li>
                                 <li><a href="sobre.php" target=""> SOBRE NÓS </a></li>
-                                <li><a href="faq.php" target="">  DÚVIDAS FREQUENTES</a></li>
+                                <li><a href="faq.php" target="">  FAQ</a></li>
                         </ul>
 		<h4>Copyright 2014. OnMack. Todos os direitos reservados.</h4> 
 	</footer>
