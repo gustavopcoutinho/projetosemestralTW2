@@ -22,6 +22,8 @@
 		</header>
 <?php
 
+
+
 $userErr = $passErr = $anoNascErr = $anoIErr = $nameErr = $emailErr = $genderErr = $cursoErr = "";
 $user = $pass = $anoNasc = $anoI = $name = $email = $gender = $descricao = $curso = "";
 
@@ -162,6 +164,8 @@ echo "<br>";
 echo $user;
 echo "<br>";
 echo $pass;
+
+
 ?>
 <section id="cor">
 		<img class="foto" src="download.jpg" alt="logo"/>  </br>
