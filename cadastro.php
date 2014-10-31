@@ -9,17 +9,7 @@
 </style>
 </head>
 <body> 
-<header>
-		<nav id="menu1">
-			<ul class="menu">
-                            <li><a href="index.php" target=""> HOME </a></li>
-                                <li><a href="cadastro.php" target=""> CADASTRO </a></li>
-                                <li><a href="login.php" target=""> LOGIN </a></li>
-                                <li><a href="sobre.php" target=""> SOBRE NÓS </a></li>
-                                <li><a href="faq.php" target="">  DÚVIDAS FREQUENTES</a></li>
-                        </ul>
-		</nav>
-		</header>
+<?php include 'header.php';?>
 <?php
 
 
@@ -162,8 +152,7 @@ echo "<br>";
 echo $gender;
 echo "<br>";
 echo $user;
-echo "<br>";
-echo $pass;
+
 
 
 ?>
@@ -174,18 +163,7 @@ echo $pass;
 	
 		<div style="clear:both"> </div>
 	
-	<footer>
-		<nav id="menu2">
-			<ul class="menuu">
-		
-			<li><a href="index.php" target=""> HOME </a></li>
-                                <li><a href="cadastro.php" target=""> CADASTRO </a></li>
-                                <li><a href="login.php" target=""> LOGIN </a></li>
-                                <li><a href="sobre.php" target=""> SOBRE NÓS </a></li>
-                                <li><a href="faq.php" target="">  DÚVIDAS FREQUENTES</a></li>
-                        </ul>
-		<h4>Copyright 2014. OnMack. Todos os direitos reservados.</h4> 
-	</footer>
+	<?php include 'footer.php';?>
 	</section>
 	
 </body>
