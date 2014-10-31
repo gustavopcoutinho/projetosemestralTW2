@@ -14,7 +14,7 @@
 		
 	
 		<div style="clear:both"> </div>
-	
+                <a href="perfil.php" target="">  Edite seu perfil!</a>
 	<?php include 'footer.php';?>
 	</section>
 	
