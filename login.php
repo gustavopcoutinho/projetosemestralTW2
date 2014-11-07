@@ -11,6 +11,7 @@
 </head>
 <body> 
 	<?php include 'header.php';?>
+    <?php include 'conecta_mysql.php'?>
 <?php
 
 

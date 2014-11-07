@@ -8,6 +8,7 @@
 		
 	<body>
         <?php include 'header.php';?>
+            <?php include 'conecta_mysql.php'?>
 		
 	<section id="cor">
 		<img class="foto" src="download.jpg" alt="logo"/>  </br>

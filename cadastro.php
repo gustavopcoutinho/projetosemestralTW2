@@ -10,6 +10,7 @@
 </head>
 <body> 
 <?php include 'header.php';?>
+<?php include 'conecta_mysql.php'?>
 <?php
 
 
@@ -26,6 +27,16 @@ $userErr=$passErr=$emailErr="";
      
      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
        $emailErr = "Formato de email inválido"; 
+     }
+   }
+   
+   if (empty($_POST["usuario"])) {
+     $userErr = "Usuário necessário";
+   } else {
+     $user = test_input($_POST["usuario"]);
+     
+     if (!filter_var($user)) {
+       $user = "Usuário inválido"; 
      }
    }
    
@@ -67,11 +78,9 @@ function test_input($data) {
 </form>
 
 <?php
-echo "<h2>Suas informações:</h2>";
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $user;
+$sql = "INSERT INTO cadastro (email,usuario,senha) VALUES($email,$user,$pass)";
+$resultado = mysqli_query($conexao,$sql) or die("Não foi possível 
+executar a SQL: ".mysqli_error($conexao));
 
 
 

@@ -10,6 +10,7 @@
 </head>
 <body> 
 <?php include 'header.php';?>
+    <?php include 'conecta_mysql.php'?>
 <?php
 
 
@@ -96,20 +97,11 @@ function test_input($data) {
 </form>
 
 <?php
-echo "<h2>Suas informações:</h2>";
-echo "<br>";
-echo $name;
-echo "<br>";
-echo $anoNasc;
-echo "<br>";
-echo $curso;
-echo "<br>";
-echo $anoI;
-echo"<br>";
-echo $descricao;
-echo "<br>";
-echo $gender;
-echo "<br>";
+$sql = "INSERT INTO cadastro (nome,anoNasc,curso,anoIni,descr,sexo) VALUES($name,$anoNasc,$anoI,$descricao,$gender)";
+$resultado = mysqli_query($conexao,$sql) or die("Não foi possível 
+executar a SQL: ".mysqli_error($conexao));
+
+
 
 ?>
 <section id="cor">
