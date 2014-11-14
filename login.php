@@ -49,7 +49,7 @@ function test_input($data) {
 }
 ?>
 
-<h2>Validação</h2>
+<h2>Login</h2>
 <p><span class="error">* Campo necessário.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
    Usuário: <input type="text" name="user" value="<?php echo $user;?>">
