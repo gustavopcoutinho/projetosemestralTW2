@@ -3,7 +3,7 @@
 	<head>
 		<title> OnMack - Início </title>
 		<meta charset="utf-8">
-		<link href="css/index.css" type="text/css" rel="stylesheet"/>
+		<link href="index.css" type="text/css" rel="stylesheet"/>
         </head>
 		
 	<body>

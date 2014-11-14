@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>OnMack - Cadastro</title>
-		<link href="css/homepage.css" type="text/css" rel="stylesheet"/>
+		<link href="cadastro.css" type="text/css" rel="stylesheet"/>
 <style>
 .error {color: #FF0000;}
 </style>
