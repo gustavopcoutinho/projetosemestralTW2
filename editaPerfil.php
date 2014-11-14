@@ -16,7 +16,7 @@
 
 
  $anoNascErr = $anoIErr = $nameErr  = $genderErr = $cursoErr = "";
-$anoNasc = $anoI = $name = $gender = $descricao = $curso = "";
+$anoNasc = $anoI = $name = $gender = $descricao = $curso =$email= "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["name"])) {
