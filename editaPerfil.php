@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    } else {
      $gender = test_input($_POST["sexo"]);
    }
+   
 }
 
 function test_input($data) {
